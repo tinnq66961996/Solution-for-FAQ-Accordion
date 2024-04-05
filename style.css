@@ -1,0 +1,129 @@
+html {
+  font-size: 10px;
+  height: 100vh;
+}
+@font-face {
+  font-family: 'WorkSans';
+  src: url(assets/fonts/WorkSans-VariableFont_wght.ttf) format(ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+}
+
+button {
+  font-family: 'WorkSans', sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: 'WorkSans', sans-serif;
+  background-color: var(--light-pink);
+  background-image: url(assets/images/background-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  font-weight: 400;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+header {
+  display: flex;
+  gap: 2.4rem;
+}
+header img {
+  width: 24px;
+}
+h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+h2 {
+  color: var(--dark-purple);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+h2:hover {
+  color: purple;
+}
+.container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  background-color: var(--white);
+  border-radius: 8px;
+  margin: auto 2.4rem;
+  padding: 2.4rem;
+  max-width: 37.5rem;
+  max-height: 81.2rem;
+}
+.card-description {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.description {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.4rem;
+}
+.paragraph-description {
+  font-size: 1.4rem;
+  color: var(--grayish-purple);
+}
+.paragraph-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out; /* Apply transition to the paragraph */
+}
+
+.paragraph-description.visible {
+  max-height: 1000px; /* Set a large value to ensure it covers the content height */
+}
+
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: var(--light-pink);
+}
+
+@media screen and (min-width: 376px) {
+  body {
+    background-image: url(assets/images/background-pattern-desktop.svg);
+  }
+  h1 {
+    font-size: 5.6rem;
+  }
+  h2 {
+    color: var(--dark-purple);
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  .card-description {
+    gap: 2.4rem;
+  }
+  .paragraph-description {
+    font-size: 1.6rem;
+  }
+  .container {
+    max-width: 60rem;
+    max-height: 90rem;
+  }
+}
